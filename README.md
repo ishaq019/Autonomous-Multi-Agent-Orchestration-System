@@ -12,25 +12,7 @@ The **Autonomous Multi-Agent Orchestration System** is a sophisticated agentic w
 
 Unlike traditional chatbots that rely on a single prompt, this system uses a **Supervisor Architecture** built on **LangGraph**. A central "Supervisor" LLM (Llama 3) analyzes user intent and dynamically routes queries to the most appropriate tool-enabled agent (e.g., Math, Search, Weather, or Reasoning). The system features a **real-time React frontend** that visualizes the agent's decision-making process (Chain-of-Thought) via Server-Sent Events (SSE).
 
-## 🏗️ Architecture
 
-The system utilizes a **Directed Acyclic Graph (DAG)** to manage state and control flow between agents.
-
-```mermaid
-graph TD
-    User(User Query) --> Supervisor{Supervisor Agent<br/>
-    
-    Supervisor -->|Calculations| MathAgent[Math Agent]
-    Supervisor -->|Current Events| SearchAgent[Search Agent]
-    Supervisor -->|Live Data| WeatherAgent[Weather Agent]
-    
-    MathAgent --> Supervisor
-    SearchAgent --> Supervisor
-    WeatherAgent --> Supervisor
-    
-    Supervisor -->|Final Answer| Response(Streaming Response via SSE)
-
-```
 
 ## ✨ Key Features
 
