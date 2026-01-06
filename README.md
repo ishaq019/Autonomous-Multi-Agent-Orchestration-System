@@ -18,7 +18,7 @@ The system utilizes a **Directed Acyclic Graph (DAG)** to manage state and contr
 
 ```mermaid
 graph TD
-    User(User Query) --> Supervisor{Supervisor Agent<br/>(Llama 3)}
+    User(User Query) --> Supervisor{Supervisor Agent<br/>{(Llama 3)}
     
     Supervisor -->|Calculations| MathAgent[Math Agent]
     Supervisor -->|Current Events| SearchAgent[Search Agent]
